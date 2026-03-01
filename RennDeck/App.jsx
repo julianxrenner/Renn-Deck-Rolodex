@@ -28,7 +28,7 @@ export default function App() {
     setContacts(contactList)
   }, []);
 
-  const filteredContacts = contacts.filter(person => person.name.includes(search))
+  const filteredContacts = contacts.filter(person => person.name.toLowerCase().includes(search.toLowerCase()))
   
   return (
     <SafeAreaProvider>
