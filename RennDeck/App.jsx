@@ -8,10 +8,28 @@ import AddContact from "./components/AddContact";
 import "./global.css";
 
 export default function App() {
-  const [contacts, setContacts] = React.useState({});
-  const [name, setName] = React.useState("");
+  const [contacts, setContacts] = React.useState([]);
+  const [search, setSearch] = React.useState("");
 
   const contactList = [
+    { name: "Julian", number: "123" },
+    { name: "Aurora", number: "456" },
+    { name: "Julian", number: "123" },
+    { name: "Aurora", number: "456" },
+    { name: "Julian", number: "123" },
+    { name: "Aurora", number: "456" },
+    { name: "Julian", number: "123" },
+    { name: "Aurora", number: "456" },
+    { name: "Julian", number: "123" },
+    { name: "Aurora", number: "456" },
+    { name: "Julian", number: "123" },
+    { name: "Aurora", number: "456" },
+    { name: "Julian", number: "123" },
+    { name: "Aurora", number: "456" },
+    { name: "Julian", number: "123" },
+    { name: "Aurora", number: "456" },
+    { name: "Julian", number: "123" },
+    { name: "Aurora", number: "456" },
     { name: "Julian", number: "123" },
     { name: "Aurora", number: "456" },
   ];
@@ -20,19 +38,19 @@ export default function App() {
     setContacts(contactList)
   }, []);
 
-  const handleContactUpdate = () => {}
 
   const handleSearch = (event) => {
-    setName(event.target.value);
-    handleContactUpdate();
+    setSearch(event.target.value);
   };
 
+  const filteredContacts = contacts.filter(person => person.name.includes(search))
+  
   return (
     <SafeAreaProvider>
       <SafeAreaView className="flex-1 m-10">
-        <Text className="text-2xl font-bold text-center font-mono">Renn Deck Rolodex</Text>
-        <SearchFilter />
-        <ContactList />
+        <Text className="text-2xl font-bold text-center font-mono">ROLODEX</Text>
+        <SearchFilter handleSearch={handleSearch}/>
+        <ContactList contacts={filteredContacts}/>
         <AddContact />
         <StatusBar style="auto" />
       </SafeAreaView>
