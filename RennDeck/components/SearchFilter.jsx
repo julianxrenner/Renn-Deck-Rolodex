@@ -7,7 +7,7 @@ const SearchFilter = (props) => {
       <TextInput
         className="border border-black p-2 rounded-lg font-bold text-lg"
         placeholder="Search Contacts"
-        onChange={props.handleSearch}
+        onChangeText={newValue=> props.setSearch(newValue)}
       />
     </View>
   );

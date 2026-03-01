@@ -4,7 +4,7 @@ import { View, TextInput, Text, Button, TouchableOpacity, ScrollView } from "rea
 
 const ContactList = (props) => {
   const contactButtons = props.contacts.map((person) => (
-    <TouchableOpacity className="bg-blue-500 p-4 rounded-lg shadow-md m-1">
+    <TouchableOpacity key={person.id} className="bg-blue-500 p-4 rounded-lg shadow-md m-1">
       <Text className="text-center text-white text-lg font-bold">{person.name}</Text>
     </TouchableOpacity>
   ));
