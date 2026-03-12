@@ -22,7 +22,7 @@ const ContactList = (props) => {
     </TouchableOpacity>
   ));
   return (
-    <ScrollView className="my-5 bg-gray-200 rounded-lg">
+    <ScrollView className=" bg-gray-200 rounded-lg">
       <View className="my-5">{contactButtons}</View>
     </ScrollView>
   );
